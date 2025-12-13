@@ -12,9 +12,9 @@ public class APIParser {
             JSONArray jArrCharacters = source.getJSONArray("items");
             for(int i = 0; i < jArrCharacters.length(); i++){
                 DragonBallCharacter character = new DragonBallCharacter();
-//                character.id = ((JSONObject)jArrCharacters.get(i)).getInt("id");
+                character.id = ((JSONObject)jArrCharacters.get(i)).getInt("id");
                 character.name = ((JSONObject)jArrCharacters.get(i)).getString("name");
-                character.ki = Integer.parseInt(((JSONObject)jArrCharacters.get(i)).getString("ki"));
+                character.ki = ((JSONObject)jArrCharacters.get(i)).getString("ki");
                 character.maxKi = ((JSONObject)jArrCharacters.get(i)).getString("maxKi");
                 character.race = ((JSONObject)jArrCharacters.get(i)).getString("race");
                 character.gender = ((JSONObject)jArrCharacters.get(i)).getString("gender");

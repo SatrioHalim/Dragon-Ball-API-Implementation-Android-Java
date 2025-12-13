@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             ByteArrayOutputStream buffer = new ByteArrayOutputStream();
             int i = is.read();
-            while (i!=-1){
+            while (i != -1){
                 buffer.write(i);
                 i = is.read();
             }
@@ -74,8 +74,10 @@ public class MainActivity extends AppCompatActivity {
             ArrayList<DragonBallCharacter> characters = new ArrayList<>();
             try {
                 characters = apiParser.parseJsonToCharacter(new JSONObject(s));
+                Log.v("Nama character", characters.get(1).name);
             }catch (Exception e){
                 e.printStackTrace();
+                Log.v("Error","Error");
             }
             String name1 = characters.get(1).name;
             String race1 = characters.get(1).race;
