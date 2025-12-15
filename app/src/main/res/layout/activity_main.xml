@@ -6,29 +6,33 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical"
-    android:layout_margin="48dp">
+    >
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Name here"-->
+<!--        android:textSize="18sp"-->
+<!--        android:id="@+id/tvNameTesting"-->
+<!--        ></TextView>-->
 
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Race here"-->
+<!--        android:textSize="18sp"-->
+<!--        android:id="@+id/tvRaceTesting"-->
+<!--        ></TextView>-->
+<!--    <ImageView-->
+<!--        android:layout_width="100dp"-->
+<!--        android:layout_height="100dp"-->
+<!--        android:src="@mipmap/ic_launcher"-->
+<!--        android:id="@+id/ivImageTesting"-->
+<!--        ></ImageView>-->
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Name here"
-        android:textSize="18sp"
-        android:id="@+id/tvName"
-        ></TextView>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Race here"
-        android:textSize="18sp"
-        android:id="@+id/tvRace"
-        ></TextView>
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@mipmap/ic_launcher"
-        android:id="@+id/ivImage"
-        ></ImageView>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/rvMainCharacter"
+            ></androidx.recyclerview.widget.RecyclerView>
 
 </LinearLayout>

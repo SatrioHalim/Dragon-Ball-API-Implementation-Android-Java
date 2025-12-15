@@ -1,6 +1,8 @@
 package com.binus.finalproject_mobileprogramming_apiimplementasion;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -19,19 +21,28 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView tvName, tvRace;
-    ImageView ivImage;
+//    TextView tvName, tvRace;
+//    ImageView ivImage;
+    RecyclerView rvCharacters;
+    CharacterAdapter characterAdapter;
+    ArrayList<DragonBallCharacter> characters = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        tvName = findViewById(R.id.tvName);
-        tvRace = findViewById(R.id.tvRace);
-        ivImage = findViewById(R.id.ivImage);
+//        tvName = findViewById(R.id.tvNameTesting);
+//        tvRace = findViewById(R.id.tvRaceTesting);
+//        ivImage = findViewById(R.id.ivImageTesting);
+        rvCharacters = findViewById(R.id.rvMainCharacter);
+        rvCharacters.setLayoutManager(new LinearLayoutManager(this));
 
-        DemoTask task1 = new DemoTask();
+        GetAllCharactersTask task1 = new GetAllCharactersTask();
         task1.execute();
+
+        Log.v("Character Assign",characters.get(1).name);
+        characterAdapter = new CharacterAdapter(characters);
+        rvCharacters.setAdapter(characterAdapter);
     }
 
     private String readStream(InputStream is){
@@ -48,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         }
         return "";
     }
-    private class DemoTask extends AsyncTask<Void, Void, String>{
+    private class GetAllCharactersTask extends AsyncTask<Void, Void, String>{
 
         @Override
         protected String doInBackground(Void... voids) {
@@ -71,21 +82,15 @@ public class MainActivity extends AppCompatActivity {
             Log.v("response",s);
 
             APIParser apiParser = new APIParser();
-            ArrayList<DragonBallCharacter> characters = new ArrayList<>();
+            ArrayList<DragonBallCharacter> tempCharacters = new ArrayList<>();
             try {
-                characters = apiParser.parseJsonToCharacter(new JSONObject(s));
-                Log.v("Nama character", characters.get(1).name);
+                tempCharacters = apiParser.parseJsonToCharacter(new JSONObject(s));
+                Log.v("Nama character", tempCharacters.get(1).name);
             }catch (Exception e){
                 e.printStackTrace();
                 Log.v("Error","Error");
             }
-            String name1 = characters.get(1).name;
-            String race1 = characters.get(1).race;
-            String image1 = characters.get(1).imageURL;
-
-            tvName.setText(name1);
-            tvRace.setText(race1);
-
+            characters.addAll(tempCharacters);
         }
     }
 }
