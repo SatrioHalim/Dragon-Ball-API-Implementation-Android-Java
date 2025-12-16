@@ -40,9 +40,7 @@ public class MainActivity extends AppCompatActivity {
         GetAllCharactersTask task1 = new GetAllCharactersTask();
         task1.execute();
 
-        Log.v("Character Assign",characters.get(1).name);
-        characterAdapter = new CharacterAdapter(characters);
-        rvCharacters.setAdapter(characterAdapter);
+
     }
 
     private String readStream(InputStream is){
@@ -89,8 +87,11 @@ public class MainActivity extends AppCompatActivity {
             }catch (Exception e){
                 e.printStackTrace();
                 Log.v("Error","Error");
-            }
+            };
             characters.addAll(tempCharacters);
+            Log.v("Testing", "" + characters.get(8).name);
+            characterAdapter = new CharacterAdapter(characters);
+            rvCharacters.setAdapter(characterAdapter);
         }
     }
 }
