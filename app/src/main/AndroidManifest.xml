@@ -15,6 +15,9 @@
         android:theme="@style/Theme.FinalProject_MobileProgramming_APIImplementasion"
         tools:targetApi="31">
         <activity
+            android:name=".CharacterResultsActivity"
+            android:exported="false" />
+        <activity
             android:name=".SearchPlanetActivity"
             android:exported="false" />
         <activity

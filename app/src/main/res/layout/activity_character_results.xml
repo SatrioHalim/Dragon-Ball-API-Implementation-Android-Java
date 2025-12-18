@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AllCharactersActivity"
+    tools:context=".CharacterResultsActivity"
     android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
@@ -20,4 +20,5 @@
         android:id="@+id/rvCharacters"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
+
 </LinearLayout>
