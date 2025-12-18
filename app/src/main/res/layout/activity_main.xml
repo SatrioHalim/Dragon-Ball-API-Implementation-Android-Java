@@ -6,6 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp"
+    android:background="#E76A24"
     >
 <!--    <TextView-->
 <!--        android:layout_width="match_parent"-->
@@ -29,10 +32,117 @@
 <!--        android:id="@+id/ivImageTesting"-->
 <!--        ></ImageView>-->
 
-        <androidx.recyclerview.widget.RecyclerView
+<!--        <Button-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Pindah Halaman All"-->
+<!--            android:id="@+id/btnAllChar"-->
+<!--            ></Button>-->
+
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:id="@+id/rvMainCharacter"-->
+<!--            ></androidx.recyclerview.widget.RecyclerView>-->
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/rvMainCharacter"
-            ></androidx.recyclerview.widget.RecyclerView>
+            android:layout_height="wrap_content"
+            android:text="Welcome to DragonBallPedia"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="48dp"
+            android:textAlignment="center"/>
+
+        <!-- Grid Layout untuk 4 tombol -->
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:rowCount="2"
+            android:padding="8dp">
+
+                <!-- All Characters Button -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_margin="8dp"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="8dp">
+
+                        <Button
+                            android:id="@+id/btnAllCharacters"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="All Characters"
+                            android:textSize="16sp"
+                            android:backgroundTint="@android:color/white"
+                            android:textColor="#000000"/>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Search Character Button -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_margin="8dp"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="8dp"
+                    app:cardBackgroundColor="@android:color/white">
+
+                        <Button
+                            android:id="@+id/btnSearchCharacter"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Search Character"
+                            android:textSize="16sp"
+                            android:backgroundTint="@android:color/white"
+                            android:textColor="#000000"/>
+                </androidx.cardview.widget.CardView>
+
+                <!-- All Planets Button -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_margin="8dp"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="8dp">
+
+                        <Button
+                            android:id="@+id/btnAllPlanets"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="All Planets"
+                            android:textSize="16sp"
+                            android:backgroundTint="@android:color/white"
+                            android:textColor="#000000"/>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Search Planet Button -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_margin="8dp"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="8dp">
+
+                        <Button
+                            android:id="@+id/btnSearchPlanet"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Search Planet"
+                            android:textSize="16sp"
+                            android:backgroundTint="@android:color/white"
+                            android:textColor="#000000"/>
+                </androidx.cardview.widget.CardView>
+
+        </GridLayout>
 
 </LinearLayout>
