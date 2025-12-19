@@ -17,9 +17,8 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="#FFD700"
-            android:title="Search Character"
-            android:titleTextColor="#000000"/>
+            android:background="#E76A24"
+            app:titleTextColor="@color/white"/>
 
         <!-- Search Form -->
         <TextView
@@ -79,8 +78,8 @@
             android:layout_height="wrap_content"
             android:text="SEARCH"
             android:layout_marginTop="32dp"
-            android:background="#FFD700"
-            android:textColor="#000000"
+            android:backgroundTint="#E76A24"
+            android:textColor="@color/white"
             android:padding="16dp"/>
 
     </LinearLayout>

@@ -34,6 +34,7 @@ public class AllPlanetsActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("All Planets List");
 
         rvPlanets = findViewById(R.id.rvPlanets);
         rvPlanets.setLayoutManager(new LinearLayoutManager(this));

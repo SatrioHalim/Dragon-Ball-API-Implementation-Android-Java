@@ -5,19 +5,43 @@
     android:orientation="vertical"
     android:layout_margin="12dp">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tvRowName"
-        android:text="name here"
-        android:textSize="18sp"
-        ></TextView>
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:id="@+id/ivImageURL"
+            android:src="@mipmap/ic_launcher"></ImageView>
 
-    <TextView
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="20dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvRowName"
+                android:text="name here"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                ></TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvRowRace"
+                android:textSize="14sp"
+                ></TextView>
+
+        </LinearLayout>
+    </LinearLayout>
+    <View
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tvRowRace"
-        android:textSize="18sp"
-        ></TextView>
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="#E76A24"/>
 
 </LinearLayout>

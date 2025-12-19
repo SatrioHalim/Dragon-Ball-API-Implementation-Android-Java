@@ -27,6 +27,7 @@ public class SearchPlanetActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Search Planet");
 
         // Initialize views
         etPlanetName = findViewById(R.id.etPlanetName);

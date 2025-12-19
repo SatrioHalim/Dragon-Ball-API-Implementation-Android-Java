@@ -4,10 +4,13 @@ import android.content.ClipData;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -19,10 +22,12 @@ public class CharacterAdapter extends RecyclerView.Adapter<CharacterAdapter.Item
     }
     public static class ItemViewHolder extends RecyclerView.ViewHolder{
         public TextView tvRowName, tvRowRace;
+        public ImageView ivImageURL;
         public ItemViewHolder(View characterRowView){
             super(characterRowView);
             tvRowName = characterRowView.findViewById(R.id.tvRowName);
             tvRowRace = characterRowView.findViewById(R.id.tvRowRace);
+            ivImageURL = characterRowView.findViewById(R.id.ivImageURL);
         }
     }
     @NonNull
@@ -36,7 +41,8 @@ public class CharacterAdapter extends RecyclerView.Adapter<CharacterAdapter.Item
     public void onBindViewHolder(@NonNull CharacterAdapter.ItemViewHolder holder, int position) {
         DragonBallCharacter currentCharacter = characters.get(position);
         holder.tvRowName.setText(currentCharacter.name);
-        holder.tvRowRace.setText(currentCharacter.race);
+        holder.tvRowRace.setText("Race : " + currentCharacter.race);
+        Picasso.get().load(currentCharacter.imageURL).into(holder.ivImageURL);
     }
 
     @Override

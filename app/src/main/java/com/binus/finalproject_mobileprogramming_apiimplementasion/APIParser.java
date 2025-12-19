@@ -84,5 +84,36 @@ public class APIParser {
         }
         return characters;
     }
+    public ArrayList<DragonBallPlanet> parseJsonArrayResponsePlanet(String jsonResponse) {
+        ArrayList<DragonBallPlanet> planets = new ArrayList<>();
+        try {
+            // Response langsung array, jadi langsung parse sebagai JSONArray
+            JSONArray jsonArray = new JSONArray(jsonResponse);
+
+            for(int i = 0; i < jsonArray.length(); i++) {
+                JSONObject characterObj = jsonArray.getJSONObject(i);
+                DragonBallPlanet planet = new DragonBallPlanet();
+
+                // Parse semua field dari response
+                planet.id = characterObj.getInt("id");
+                planet.name = characterObj.getString("name");
+                planet.isDestroyed = characterObj.getBoolean("isDestroyed");
+                planet.description = characterObj.getString("description");
+                planet.imageURL = characterObj.getString("image");
+
+                planets.add(planet);
+
+                // Debug log
+                Log.v("Parsed Planet", planet.name + " - " + planet.isDestroyed);
+            }
+
+            Log.v("Parsing Result", "Successfully parsed " + planets.size() + " characters");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            Log.e("Parsing Error", "Failed to parse JSON array: " + e.getMessage());
+        }
+        return planets;
+    }
 
 }

@@ -6,6 +6,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -34,11 +35,13 @@ public class AllCharactersActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("All Characters List");
 
         rvCharacters = findViewById(R.id.rvCharacters);
         rvCharacters.setLayoutManager(new LinearLayoutManager(this));
         characterAdapter = new CharacterAdapter(characters);
         rvCharacters.setAdapter(characterAdapter);
+
 
         GetAllCharactersTask task = new GetAllCharactersTask();
         task.execute();
