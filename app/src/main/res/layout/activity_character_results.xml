@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="#E76A24"
-        android:title="All Characters"
+        android:title="Characters List"
         android:titleTextColor="#FFFFFF"/>
 
     <!-- RecyclerView -->

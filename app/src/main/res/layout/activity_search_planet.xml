@@ -1,10 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SearchPlanetActivity"
-    android:orientation="vertical">
+    android:padding="16dp">
 
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <!-- Toolbar -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#FFD700"
+            android:title="Search Planet"
+            android:titleTextColor="#000000"/>
+
+        <!-- Search Form -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Planet Name"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"/>
+
+        <EditText
+            android:id="@+id/etPlanetName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="e.g., Namek, Tierra"
+            android:padding="12dp"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Radio Group for status -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Status"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"/>
+
+        <RadioGroup
+            android:id="@+id/rgStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp">
+
+            <RadioButton
+                android:id="@+id/rbDestroyed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Destroyed"
+                android:checked="true"/>
+
+            <RadioButton
+                android:id="@+id/rbIntact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Intact"/>
+
+        </RadioGroup>
+
+        <!-- Search Button -->
+        <Button
+            android:id="@+id/btnSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SEARCH"
+            android:layout_marginTop="32dp"
+            android:background="#FFD700"
+            android:textColor="#000000"
+            android:padding="16dp"/>
+
+    </LinearLayout>
+
+</ScrollView>

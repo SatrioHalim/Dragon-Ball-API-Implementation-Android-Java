@@ -37,44 +37,39 @@
             android:padding="12dp"
             android:layout_marginTop="8dp"/>
 
-        <!-- Radio Group for Race -->
+        <!-- Radio Group for Gender -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Race"
+            android:text="Gender"
             android:textSize="16sp"
             android:layout_marginTop="16dp"/>
 
         <RadioGroup
-            android:id="@+id/rgRace"
+            android:id="@+id/rgGender"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="12dp">
 
             <RadioButton
-                android:id="@+id/rbAllRace"
+                android:id="@+id/rbMale"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="All Races"
+                android:text="Male"
                 android:checked="true"/>
 
             <RadioButton
-                android:id="@+id/rbSaiyan"
+                android:id="@+id/rbFemale"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Saiyan"/>
+                android:text="Female"/>
 
             <RadioButton
-                android:id="@+id/rbHuman"
+                android:id="@+id/rbUnknown"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Human"/>
+                android:text="Unknown"/>
 
-            <RadioButton
-                android:id="@+id/rbNamekian"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Namekian"/>
         </RadioGroup>
 
         <!-- Search Button -->

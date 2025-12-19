@@ -17,7 +17,7 @@ public class SearchCharacterActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
     private EditText etCharacterName;
-    private RadioGroup rgRace;
+    private RadioGroup rgGender;
     private Button btnSearch;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +31,7 @@ public class SearchCharacterActivity extends AppCompatActivity {
 
         // Initialize views
         etCharacterName = findViewById(R.id.etCharacterName);
-        rgRace = findViewById(R.id.rgRace);
+        rgGender = findViewById(R.id.rgGender);
         btnSearch = findViewById(R.id.btnSearch);
 
         btnSearch.setOnClickListener(new View.OnClickListener() {
@@ -52,10 +52,10 @@ public class SearchCharacterActivity extends AppCompatActivity {
     }
     private void performSearch() {
         String name = etCharacterName.getText().toString().trim();
-        String race = getSelectedRace();
+        String gender = getSelectedGender();
 
         // Validasi
-        if (name.isEmpty() && race.equals("All Races")) {
+        if (name.isEmpty()) {
             Toast.makeText(this, "Please enter search criteria", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -63,21 +63,20 @@ public class SearchCharacterActivity extends AppCompatActivity {
         // Kirim data ke CharacterResultsActivity
         Intent intent = new Intent(this, CharacterResultsActivity.class);
         intent.putExtra("SEARCH_NAME", name);
-        intent.putExtra("SEARCH_RACE", race);
+        intent.putExtra("SEARCH_GENDER", gender);
         startActivity(intent);
     }
-    private String getSelectedRace() {
-        int selectedId = rgRace.getCheckedRadioButtonId();
+    private String getSelectedGender() {
+        int selectedId = rgGender.getCheckedRadioButtonId();
 
-        if (selectedId == R.id.rbAllRace) {
-            return "All Races";
-        } else if (selectedId == R.id.rbSaiyan) {
-            return "Saiyan";
-        } else if (selectedId == R.id.rbHuman) {
-            return "Human";
-        } else if (selectedId == R.id.rbNamekian) {
-            return "Namekian";
+        if (selectedId == R.id.rbMale) {
+            return "Male";
+        } else if (selectedId == R.id.rbFemale) {
+            return "Female";
+        } else if (selectedId == R.id.rbUnknown) {
+            return "Unknown";
         }
-        return "All Races";
+
+        return "Male";
     }
 }
