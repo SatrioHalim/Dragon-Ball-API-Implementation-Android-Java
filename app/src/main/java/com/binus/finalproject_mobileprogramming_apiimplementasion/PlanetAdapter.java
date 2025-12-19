@@ -1,5 +1,7 @@
 package com.binus.finalproject_mobileprogramming_apiimplementasion;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,6 +50,20 @@ public class PlanetAdapter  extends RecyclerView.Adapter<PlanetAdapter.ItemViewH
             holder.tvRowStatus.setText("Status : Intact");
         }
         Picasso.get().load(currentPlanet.imageURL).into(holder.ivImageURL);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Context context = holder.itemView.getContext();
+                Intent intent = new Intent(context, PlanetDetailActivity.class);
+
+                intent.putExtra("PLANET_NAME", currentPlanet.name);
+                intent.putExtra("PLANET_ISDESTROYED", currentPlanet.isDestroyed);
+                intent.putExtra("PLANET_DESCRIPTION", currentPlanet.description);
+                intent.putExtra("PLANET_IMAGE", currentPlanet.imageURL);
+
+                context.startActivity(intent);
+            }
+        });
 
     }
 

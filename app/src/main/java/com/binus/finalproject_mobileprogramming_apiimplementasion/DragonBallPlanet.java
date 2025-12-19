@@ -6,4 +6,8 @@ public class DragonBallPlanet {
     Boolean isDestroyed;
     String description;
     String imageURL;
+
+    public String getStatusText() {
+        return isDestroyed ? "Destroyed" : "Intact";
+    }
 }

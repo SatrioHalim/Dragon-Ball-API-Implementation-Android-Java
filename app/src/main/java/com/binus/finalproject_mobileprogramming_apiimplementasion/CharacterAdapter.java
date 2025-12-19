@@ -1,6 +1,8 @@
 package com.binus.finalproject_mobileprogramming_apiimplementasion;
 
 import android.content.ClipData;
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,8 +17,8 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 
 public class CharacterAdapter extends RecyclerView.Adapter<CharacterAdapter.ItemViewHolder> {
-
     ArrayList<DragonBallCharacter> characters;
+
     public CharacterAdapter(ArrayList<DragonBallCharacter> charactersData){
         this.characters = charactersData;
     }
@@ -43,6 +45,25 @@ public class CharacterAdapter extends RecyclerView.Adapter<CharacterAdapter.Item
         holder.tvRowName.setText(currentCharacter.name);
         holder.tvRowRace.setText("Race : " + currentCharacter.race);
         Picasso.get().load(currentCharacter.imageURL).into(holder.ivImageURL);
+        holder.itemView.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Context context = holder.itemView.getContext();
+                Intent intent = new Intent(context, CharacterDetailActivity.class);
+
+                // Kirim data character ke detail activity
+                intent.putExtra("CHARACTER_NAME", currentCharacter.name);
+                intent.putExtra("CHARACTER_RACE", currentCharacter.race);
+                intent.putExtra("CHARACTER_GENDER", currentCharacter.gender);
+                intent.putExtra("CHARACTER_KI", currentCharacter.ki);
+                intent.putExtra("CHARACTER_MAX_KI", currentCharacter.maxKi);
+                intent.putExtra("CHARACTER_DESCRIPTION", currentCharacter.description);
+                intent.putExtra("CHARACTER_IMAGE", currentCharacter.imageURL);
+                intent.putExtra("CHARACTER_AFFILIATION", currentCharacter.affiliation);
+
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
