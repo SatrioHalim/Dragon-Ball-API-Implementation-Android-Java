@@ -107,7 +107,6 @@ public class CharacterResultsActivity extends AppCompatActivity {
             }
             return result;
         }
-
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);

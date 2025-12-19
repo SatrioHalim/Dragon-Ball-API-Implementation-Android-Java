@@ -18,7 +18,6 @@ import java.util.ArrayList;
 
 public class CharacterAdapter extends RecyclerView.Adapter<CharacterAdapter.ItemViewHolder> {
     ArrayList<DragonBallCharacter> characters;
-
     public CharacterAdapter(ArrayList<DragonBallCharacter> charactersData){
         this.characters = charactersData;
     }
@@ -44,7 +43,9 @@ public class CharacterAdapter extends RecyclerView.Adapter<CharacterAdapter.Item
         DragonBallCharacter currentCharacter = characters.get(position);
         holder.tvRowName.setText(currentCharacter.name);
         holder.tvRowRace.setText("Race : " + currentCharacter.race);
-        Picasso.get().load(currentCharacter.imageURL).into(holder.ivImageURL);
+        Picasso.get()
+                .load(currentCharacter.imageURL)
+                .into(holder.ivImageURL);
         holder.itemView.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {

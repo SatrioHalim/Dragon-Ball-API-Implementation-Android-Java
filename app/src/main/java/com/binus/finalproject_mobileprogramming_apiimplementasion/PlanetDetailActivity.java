@@ -58,7 +58,6 @@ public class PlanetDetailActivity extends AppCompatActivity {
             if (imageUrl != null && !imageUrl.isEmpty()) {
                 Picasso.get().load(imageUrl).into(ivPlanetDetail);
             } else {
-                // Set default planet image
                 ivPlanetDetail.setImageResource(R.drawable.ic_launcher_background);
             }
         }

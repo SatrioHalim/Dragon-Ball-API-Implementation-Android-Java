@@ -13,6 +13,9 @@ import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
+
 public class SearchPlanetActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
@@ -23,13 +26,12 @@ public class SearchPlanetActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_planet);
-        // Setup Toolbar
+
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Search Planet");
 
-        // Initialize views
         etPlanetName = findViewById(R.id.etPlanetName);
         rgStatus = findViewById(R.id.rgStatus);
         btnSearch = findViewById(R.id.btnSearch);
@@ -54,13 +56,15 @@ public class SearchPlanetActivity extends AppCompatActivity {
         String name = etPlanetName.getText().toString().trim();
         String status = getSelectedStatus();
 
-        // Validasi
         if (name.isEmpty()) {
             Toast.makeText(this, "Please enter search criteria", Toast.LENGTH_SHORT).show();
+            YoYo.with(Techniques.Shake)
+                    .duration(300)
+                    .repeat(1)
+                    .playOn(etPlanetName);
             return;
         }
 
-        // Kirim data ke CharacterResultsActivity
         Intent intent = new Intent(this, PlanetResultsActivity.class);
         intent.putExtra("SEARCH_NAME", name);
         intent.putExtra("SEARCH_STATUS", status);

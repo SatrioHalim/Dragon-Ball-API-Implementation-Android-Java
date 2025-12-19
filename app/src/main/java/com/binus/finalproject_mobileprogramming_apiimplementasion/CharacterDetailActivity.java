@@ -20,7 +20,6 @@ public class CharacterDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_character_detail);
-
         toolbar = findViewById(R.id.toolbar);
         ivCharacterDetail = findViewById(R.id.ivCharacterDetail);
         tvDetailName = findViewById(R.id.tvDetailName);
