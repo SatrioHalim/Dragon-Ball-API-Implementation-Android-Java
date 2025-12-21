@@ -1,6 +1,6 @@
 # DragonBallE
 
-> Aplikasi Android Ensklopedia karakter dan planet dari dunia Dragon Ball.
+> Aplikasi Ensklopedia berbasis Android untuk karakter dan planet dari dunia Dragon Ball.
 
 ## Deskripsi
 
