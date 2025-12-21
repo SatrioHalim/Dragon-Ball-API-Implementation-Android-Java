@@ -1,4 +1,4 @@
-# Dragon Ball Ensiklopedia
+# DragonBallE
 
 > Aplikasi Android Ensklopedia karakter dan planet dari dunia Dragon Ball.
 
